@@ -53,7 +53,7 @@ func main() {
 	f.Println("######### GoLang Webserver Configuration #########")
 	f.Print("Enter Host: ")
 	f.Scan(&host)
-	f.Print("Enter PORT: ")
+	f.Print("Enter Port (80|443): ")
 	f.Scan(&port)
 	// set url var with host and port
 	url = host + ":" + port

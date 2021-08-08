@@ -1,0 +1,4 @@
+serverr.exe
+*.crt
+*.key
+serverr.sh
