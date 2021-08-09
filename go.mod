@@ -1,3 +1,3 @@
-module SaeedHurzuk/goLang-server
+module webserver
 
 go 1.16

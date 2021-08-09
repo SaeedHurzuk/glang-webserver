@@ -82,7 +82,7 @@ func main() {
 	f.Println("Port: " + port)
 	f.Println("URL: " + url)
 	f.Println("#################### GoLang Webserver ####################")
-
+	ftp.test()
 	// check if user hits ctrl + c
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt)
