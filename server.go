@@ -14,15 +14,18 @@ import (
 )
 
 var clear map[string]func() //create a map for storing clear funcs
+var oSystem string          // set os var
 
 func init() {
 	clear = make(map[string]func()) //Initialize it
 	clear["linux"] = func() {
+		oSystem = "linux"
 		cmd := exec.Command("clear") //Linux example, its tested
 		cmd.Stdout = os.Stdout
 		cmd.Run()
 	}
 	clear["windows"] = func() {
+		oSystem = "windows"
 		cmd := exec.Command("cmd", "/c", "cls") //Windows example, its tested
 		cmd.Stdout = os.Stdout
 		cmd.Run()
@@ -81,8 +84,12 @@ func main() {
 				f.Println("#################### GoLang Webserver ####################")
 				log.Println("Stopping GoLang Server and exiting..")
 				f.Println("#################### GoLang Webserver ####################")
-				pprof.StopCPUProfile()
-				os.Exit(1)
+				if oSystem != "windows" {
+					pprof.StopCPUProfile()
+					os.Exit(1)
+				} else {
+					log.Fatal("Please Check Your PORTS")
+				}
 			} else {
 				clearConsole()
 				f.Println("#################### GoLang Webserver ####################")
@@ -101,8 +108,10 @@ func main() {
 		f.Println("#################### GoLang Webserver ####################")
 		f.Print(t.Format("2006-01-02 15:04:05"))
 		f.Print(" Unable to connect to PORT " + port)
-		f.Print("\r\n#################### GoLang Webserver ####################")
-
+		f.Print("\r\n#################### GoLang Webserver ####################\r\n")
+		if oSystem == "windows" {
+			os.Exit(1)
+		}
 	}
 }
 
