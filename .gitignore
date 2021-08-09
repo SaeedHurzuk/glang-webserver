@@ -2,3 +2,4 @@ serverr.exe
 server.crt
 server.key
 serverr.sh
+main.go
