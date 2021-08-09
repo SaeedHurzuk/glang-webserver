@@ -1,2 +1,2 @@
 # golang-webserver
-https://img.shields.io/badge/go%20report-A+-brightgreen.svg?style=flat
+[![Go Report Card](https://goreportcard.com/badge/github.com/SaeedHurzuk/golang-webserver)](https://goreportcard.com/report/github.com/SaeedHurzuk/golang-webserver)
